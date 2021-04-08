@@ -1,0 +1,79 @@
+body{
+  margin: 20px;
+}
+
+.reg {
+  width: 200px;
+  padding: 5px;
+  text-decoration: none;
+  border: 3px solid #fff;
+  font-size: 20px;
+  color: #fff;
+  background-color:#339ad6;
+}
+
+.table tr td{
+  width: 300px;
+  float:left;
+  font-size: 20px;
+  color: #fff;
+  background-color:#acd8f2;
+  margin-left:50px;
+  margin-top: 20px;
+  border:3px solid #fff;
+  padding: 10px;
+}
+
+#member button{
+  float:right;
+}
+
+#status td{
+  background-color: #191f54;
+}
+
+.form{
+  text-align: center;
+}
+.myform{
+  font-size: 20px;
+}
+
+.myform input{
+  width: 500px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: .8em .5em;
+}
+
+body h1{
+  text-align: center;
+}
+
+.input-radio{
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px;
+}
+
+.finalinput input{
+  width: 100px;
+  height: 40px;
+  background-color: #339ad6;
+  color: #fff;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.finalinput a{
+  width: 100px;
+  height: 40px;
+  text-decoration: none;
+  margin-right: 5%;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 15px;
+}

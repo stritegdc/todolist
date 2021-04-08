@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import kr.or.connect.todo.dto.TodoDto;
 
 public class TodoDao {
 
-	private static String dburl = "jdbc:mysql://localhost:3306/connectdb?serverTimezone=UTC";
+	private static String dburl = "jdbc:mysql://localhost:3306/connectdb?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8";
 	private static String dbuser = "connectuser";
 	private static String dbpasswd = "connect123!@#";
 	
@@ -25,7 +26,7 @@ public class TodoDao {
 		}catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		String sql = "INSERT INTO todo (id, title, name, sequence, type, regdata) VALUES (?,?,?,?,?,?)";
+		String sql = "INSERT INTO todo (id, title, name, sequence, type, regdate) VALUES (?,?,?,?,?,?)";
 		
 		try(Connection conn = DriverManager.getConnection(dburl, dbuser, dbpasswd);
 				PreparedStatement ps = conn.prepareStatement(sql)){
@@ -34,7 +35,7 @@ public class TodoDao {
 			ps.setString(3, list.getName());
 			ps.setInt(4, list.getSequence());
 			ps.setString(5, list.getType());
-			ps.setString(6, list.getRegDate());
+			ps.setString(6, list.getRegdate());
 			
 			insertCount = ps.executeUpdate();
 		}catch(Exception ex) {
@@ -53,18 +54,19 @@ public class TodoDao {
 			e.printStackTrace();
 		}
 		
-		String sql = "select id, title, name, sequence, type, regdate from todo order by regdate desc";
+		String sql = "select id, title, name, sequence, type, regdate from todo";
 		try(
 				Connection conn = DriverManager.getConnection(dburl,dbuser,dbpasswd);
 				PreparedStatement ps = conn.prepareStatement(sql)){
 			try(ResultSet rs = ps.executeQuery()){
 				while(rs.next()) {
-					long id = rs.getLong("id");
-					String title = rs.getString("title");
+					long id = rs.getLong(1);
+					String title = rs.getString(2);
 					String name = rs.getString(3);
 					int sequence = rs.getInt(4);
 					String type = rs.getString(5);
-					String regdate = rs.getString(6);
+					Timestamp ts = rs.getTimestamp(6);
+					String regdate = ts.toString();
 					TodoDto todo = new TodoDto(id, title, name, sequence, type, regdate);
 					list.add(todo);
 				}

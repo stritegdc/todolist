@@ -3,10 +3,12 @@ package kr.or.connect.todo.dto;
 public class TodoDto {
 	private long id;
 	private String name;
-	private String regDate;
 	private int sequence;
 	private String title;
 	private String type;
+	private String regdate;
+
+	
 	
 	public TodoDto() {}
 	public TodoDto(long id, String title, String name, int sequence, String type, String regdate) {
@@ -16,7 +18,7 @@ public class TodoDto {
 		this.name = name;
 		this.sequence = sequence;
 		this.type = type;
-		this.regDate = regDate;
+		this.regdate = regdate;
 	}
 	
 	public long getId() {
@@ -31,11 +33,11 @@ public class TodoDto {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getRegDate() {
-		return regDate;
+	public String getRegdate() {
+		return regdate;
 	}
-	public void setRegDate(String regDate) {
-		this.regDate = regDate;
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
 	public int getSequence() {
 		return sequence;
@@ -58,7 +60,7 @@ public class TodoDto {
 
 	@Override
 	public String toString() {
-		return "[id=" + id + ", title=" + title + ", name=" + name + ", sequence=" + sequence + ", type=" + type + ", regdate=" + regDate + "]";
+		return "[title=" + title + ", name=" + name + ", " + sequence + "순위, " + regdate + "]";
 	}
 	
 
