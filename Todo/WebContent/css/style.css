@@ -1,0 +1,45 @@
+body{
+	background-color: rgb(236, 240, 240);
+}
+
+.form{ text-align: center;}
+
+.myform{ font-size: 20px;} 
+
+.myform input{ 
+	width: 500px; 
+	height: 50px; 
+	margin-top: 10px; 
+	margin-bottom: 20px; 
+	padding: .8em .5em;
+	} 
+	
+body h1{ 
+	text-align: center;
+	} 
+
+.input-radio{ 
+	display: inline-block; 
+	font-size: 15px; 
+	margin: 20px;
+	} 
+
+.finalinput input{ 
+	width: 100px; 
+	height: 40px; 
+	background-color: #339ad6; 
+	color: #fff; 
+	border: 2px solid black; 
+	border-radius: 5px; font-size: 15px;
+	} 
+
+.finalinput a{ 
+	width: 100px; 
+	height: 40px; 
+	text-decoration: none; 
+	margin-right: 5%; 
+	padding: 10px; 
+	border: 2px solid black; 
+	border-radius: 5px; 
+	font-size: 15px;
+}

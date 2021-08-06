@@ -1,0 +1,81 @@
+#title{
+	font-size: 30px;
+	text-align: center;
+}
+
+#register{
+	width: 180px;
+	height: 36px;
+	background: #0054a8;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 5px;
+	position: absolute; /*가장 가까운 상위 요소의 위치를 기준으로 지정한 값만큼 떨어진 곳에 요소를 배치한다 */
+	left: 50em;
+}
+
+#outline{
+	position: relative; /*원래 배치되어야 할 위치에서 지정한 값만큼 떨어져서 배치*/
+	top: 5em;
+	left: 5em;
+	height: auto;
+}
+
+#todo{
+	float: left;
+}
+
+#doing{
+	float: left;
+	margin-left: 1.4em;
+}
+
+#done{
+	float: left;
+	margin-left: 1.4em;
+}
+
+.status-list{
+	position: relative;
+	left: 10px;
+	width: 280px;
+	height: 36px;
+	background: #82bcfd;
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	padding-left: 20px;
+}
+
+.content{
+	position: relative;
+	width: 280px;
+	height: 70px;
+	background: #b7e0f7;
+	margin: 10px;
+	padding: 10px;
+}
+
+
+.content-title{
+	margin: 8px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.content-detail{
+	font-size: 12px;	
+}
+
+.move{
+	position: absolute; /*상위태그인 .content의 position:relative가 있어야 적용되네*/
+	right: 5px;
+	bottom: 5px;
+	border: 0;
+	outline: 0;
+	background: white;
+	border-radius: 5px;
+}
+
