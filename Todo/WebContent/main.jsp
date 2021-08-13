@@ -27,6 +27,7 @@
 							<c:if test="${list.type ne 'done'}">
 								<button class="move" onclick="moveButtonClick(${list.id}, this)">▶</button>
 							</c:if>
+							<button id="remove" onclick="removeButtonClick(${list.id}, this)">x</button>
 						</div>
 					</c:if>
 				</c:forEach>
