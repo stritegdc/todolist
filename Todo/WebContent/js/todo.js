@@ -24,11 +24,17 @@ function moveButtonClick(id, eventNode) {
 	xhr.send();
 }
 
+function remove(eventNode){
+	removeNode = eventNode.parentNode;
+	baseNode = removeNode.parentNode;
+	baseNode.removeChild(removeNode);
+}
+
 function removeButtonClick(id, eventNode){
 	var xhr = new XMLHttpRequest();
 	xhr.addEventListener("load", function() {
 		if(this.readyState == 4 && this.status == 200)			
-			console.log(this.responseText);
+			remove(eventNode);
 	}); 	
 	
 	xhr.open("GET", "./TodoRemoveServlet?id=" + id);
